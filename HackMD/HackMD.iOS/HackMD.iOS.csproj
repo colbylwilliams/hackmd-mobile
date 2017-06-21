@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{49D4B06D-3091-4C96-8E45-B160F68EF734}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HackMD.iOS</RootNamespace>
+    <AssemblyName>HackMD.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IOSDebuggerPort>37662</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>44025</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Target Name="RootPlist" BeforeTargets="Build" Condition="'$(OS)'=='Unix'">
+    <Exec Command="/bin/bash '$(SolutionDir)/scripts/plist_utility.sh' -p '$(ProjectDir)' -c 'Copyright © 2017 Colby Williams' -r '$(Configuration)'" />
+  </Target>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System" />
+    <Reference Include="Plugin.VersionTracking.Abstractions">
+      <HintPath>..\packages\Plugin.VersionTracking.1.0.1\lib\Xamarin.iOS10\Plugin.VersionTracking.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.VersionTracking">
+      <HintPath>..\packages\Plugin.VersionTracking.1.0.1\lib\Xamarin.iOS10\Plugin.VersionTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.Azure.Mobile">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Analytics.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Analytics.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Crashes.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Crashes.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Distribute">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Distribute.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Distribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Distribute.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Distribute.0.13.0\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Distribute.iOS.Bindings.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="ViewControllers\ViewController.cs" />
+    <Compile Include="ViewControllers\ViewController.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\StoryboardExtensions.cs" />
+    <Compile Include="Extensions\ViewExtensions.cs" />
+    <Compile Include="Settings\SettingUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+    <None Include="root_plist.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Settings.bundle\Root.plist" />
+  </ItemGroup>
+  <Import Project="..\HackMD.Shared\HackMD.Shared.projitems" Label="Shared" Condition="Exists('..\HackMD.Shared\HackMD.Shared.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

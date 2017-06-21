@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{058C9DBC-9E38-45AC-AEAC-12D8C2A93492}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>HackMD</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Bootstrap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Keys\Keys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingAccessors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TaskExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\Log.cs" />
+  </ItemGroup>
+</Project>
